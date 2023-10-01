@@ -1,15 +1,13 @@
 <script>
-	// import svelteLogo from './assets/svelte.svg'
-	// import viteLogo from '/vite.svg'
-	// import Counter from './lib/Counter.svelte'
-	import myphoto from "./lib/img/my-img.jpeg"
-	
-	import Footer from "./components/Footer.svelte"
-	import Header from "./components/Header.svelte"
-	import Rightbar from "./components/Rightbar.svelte"
+	import Header from "./components/Header.svelte";
+	import IntroCard from "./components/IntroCard.svelte";
+	import Footer from "./components/Footer.svelte";
+	import Rightbar from "./components/Rightbar.svelte";
+	import PaperCard from "./components/PaperCard.svelte";
+    import AboutMe from "./components/AboutMe.svelte";
 
-	// let name = "Diyi Liu's website";
-	let items = ["Bio", "Research", "Skillsets", "Methods", "Tutorial"];
+	// add variables/functions for page navigation
+	let items = ["Bio", "Papers"];
 	let activeItem = "Bio";
 	const tabChange = (e) => {
 		activeItem = e.detail;
@@ -18,220 +16,207 @@
 	// language settings
 	let languages = ["en", "中"]
 	let activeLang = "en";
-
 	const langChange = (e) => {
 		activeLang = e.detail;
 	}
+
+	// add variables for the cards...
+	let research_interests = [
+		'Scalable data computation tasks (data science)',
+		'Machine Learning applications in transportation field (machine learning, deep learning)',
+		'Computer Science algorithms, traffic simulation, optimization algorithms, etc.',
+	];
+
+	let research_interests_cn = [
+		"大数据计算",
+		"机器学习/深度学习/强化学习",
+		"计算机算法, 交通仿真, 图算法,优化问题等"
+	];
+
+	let my_skills = [
+		"Programming Language: Python, R, JavaScript, C++, SQL, git, etc.",
+		"Python Packages: Numpy, Matplotlib, Pandas, PyTorch, Keras, Gurobipy, etc.",
+		"Industrial Softwares: SUMO, Vissim, ArcGIS, QGIS, Matlab, Simio, etc."
+	];
+
+	let my_skills_cn = [
+		"编程语言: Python, R, JavaScript, C++, SQL, git, etc.",
+		"编程包: Numpy, Matplotlib, Pandas, PyTorch, Keras, Gurobipy, TraCI, etc.",
+		"工业软件: SUMO, Vissim, ArcGIS, QGIS, Matlab, Simio, etc."
+	];
+
+	let my_methods = [
+		"Modeling: Statistical Machine Learning & Deep Learning.",
+		"Optimization: Reinforcement Learning, Linear/Convex Optimization, etc.",
+		"Visualization: scientific & interactive diagrams"
+	];
+
+	let my_methods_cn = [
+		"建模: 统计学习/机器学习",
+		"优化: 强化学习/线性优化",
+		"可视化: 科学绘图",
+	];
 </script>
 
-
-<Header {activeItem} {items} on:tabChange={tabChange} 
+<Header {activeItem} {items} on:tabChange={tabChange}
  {activeLang} {languages} on:langChange={langChange}/>
 
 <main>
-  <div class="row">
+	<div class="row">
 		<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-		<div data-bs-spy="scroll" data-bs-target="#navbar-example2"
-		data-bs-offset="0" class="scrollspy-example col-md-8" tabindex="0">
-			<hr>
-			<div class="row">
-				<div class="col-md-8">
-					{#if activeLang === "en"}
-						<h2 id="Bio" class="myLang">Diyi Liu</h2>
+		<div class="scrollspy-example col-md-9" tabindex="0">
 
-						<ul class="list-unstyled">
-							<li>Ph.D student in Transportation Engineering at University of Tennessee, Knoxville</li>
-							<li>Advisor: <a href="https://cee.utk.edu/people/lee-d-han/" target="_blank">Dr. Lee D Han</a></li>
-						</ul>
-					{:else if activeLang === "中"}
-						<h2 id="Bio" lang="zh-CN" class="myLang">刘迪一</h2>
-						<ul class="list-unstyled">
-							<li>田纳西大学, 诺克斯维尔分校(UT, Knoxville)交通工程专业在读博士</li>
-							<li>导师: <a href="https://cee.utk.edu/people/lee-d-han/" target="_blank">Dr. Lee D Han(韩立教授)</a></li>
-						</ul>
-					{/if}
-				</div>
-				<div class="col-md-4">
-					<img src={myphoto} class="img-fluid" alt="My Photo">
-				</div>
-			</div>
-			
+			<AboutMe {activeLang} />
+
 			<hr>
-			{#if activeLang === "en"}
-				<h2 id="Research">Research Interests</h2>
-				<ul class="list-unstyled">
-					<li>Scalable data computation tasks</li>
-					<li>Machine Learning applications</li>
-					<li>Computer Science algorithms, traffic simulation, optimization algorithms, etc.</li>
-				</ul>
-			{:else if activeLang === "中"}
-				<h2 id="Research">研究兴趣,与交通相关的:</h2>
-				<ul class="list-unstyled">
-					<li>大数据计算</li>
-					<li>机器学习/深度学习</li>
-					<li>计算机算法, 交通仿真, 图算法,优化问题等</li>
-				</ul>
+
+			{#if activeLang == "en"}
+				<IntroCard
+					title="Research Interests"
+					bullets={research_interests}
+				/>
+			{:else if activeLang == "中"}
+				<IntroCard
+					title="研究内容:"
+					bullets={research_interests_cn}
+				/>
+			{/if}
+
+			{#if activeLang == "en"}
+				<IntroCard
+					title="Skillsets"
+					bullets={my_skills}
+				/>
+			{:else if activeLang == "中"}
+				<IntroCard
+					title="常用技术栈"
+					bullets={my_skills_cn}
+				/>
 			{/if}
 			
-			<hr>
-			{#if activeLang === "en"}
-				<h2>Programs Involved</h2>
-				<ul class="list-unstyled">
-					<li><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2038922&HistoricalAwards=false" target="_blank">CPS program</a></li>
-					<li><a href="https://utorii.com/gate/" target="_blank">GATE scholarship</a></li>
-					<li><a href="https://smartway.tn.gov/" target="_blank">TDOT Smartway</a></li>
-					<li><a href="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpoolingvanpooling-system-among-sov" target="_blank">NCST 1</a></li>
-					<li><a href="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpooling-system-among-single-occupancy" target="_blank">NCST 2</a></li>
-				</ul>
-			{:else if activeLang === "中"}
-				<h2>近期项目</h2>
-				<ul class="list-unstyled">
-					<li><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2038922&HistoricalAwards=false" target="_blank">CPS program</a></li>
-					<li><a href="https://utorii.com/gate/" target="_blank">GATE scholarship</a></li>
-					<li><a href="https://smartway.tn.gov/" target="_blank">TDOT Smartway</a></li>
-					<li><a href="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpoolingvanpooling-system-among-sov" target="_blank">NCST 1</a></li>
-					<li><a href="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpooling-system-among-single-occupancy" target="_blank">NCST 2</a></li>
-				</ul>
+			{#if activeLang == "en"}
+				<IntroCard
+					title="Methdologies"
+					bullets={my_methods}
+				/>
+			{:else if activeLang == "中"}
+				<IntroCard
+					title="研究方法"
+					bullets={my_methods_cn}
+				/>
 			{/if}
 
-			<hr>
-			{#if activeLang === "en"}
-			<h2>Important Papers & Reports</h2>
-				<ul class="list-unstyled">
-					<li><a href="https://journals.sagepub.com/doi/abs/10.1177/03611981221094569" target="_blank">
-						Innovative Method for Estimating Large Truck Volume Using Aggregate Volume and Occupancy Data Incorporating Empirical Knowledge Into Linear Programming</a></li>
-					<br>
-					<li><a href="https://arxiv.org/abs/2301.12036" target="_blank">
-			Analyzing Robustness of the Deep Reinforcement Learning Algorithm in Ramp Metering Applications Considering False Data Injection Attack and Defense</li>
-					<br>
-			<li><a href="https://escholarship.org/uc/item/9c749361" target="_blank">
-						Evaluating the Sustainability Impacts of Intelligent Carpooling Systems for SOV Commuters in the Atlanta Region</a></li>
-					<br>
-					<li><a href="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpoolingvanpooling-system-among-sov" target="_blank">
-			Evaluating Sustainability Impacts of Intelligent Carpooling/Vanpooling System among SOV Commuters, Phase II: Park and Ride Interactions</li>
-					<br>
-				</ul>
-			{:else if activeLang === "中"}
-			<h2>部分重要的发表文章/报告</h2>
-			<ul class="list-unstyled">
-				<li><a href="https://journals.sagepub.com/doi/abs/10.1177/03611981221094569" target="_blank">
-					Innovative Method for Estimating Large Truck Volume Using Aggregate Volume and Occupancy Data Incorporating Empirical Knowledge Into Linear Programming</a></li>
-				<br>
-				<li><a href="https://arxiv.org/abs/2301.12036" target="_blank">
-					Analyzing Robustness of the Deep Reinforcement Learning Algorithm in Ramp Metering Applications Considering False Data Injection Attack and Defense</li>
-				<br>	
-				<li><a href="https://escholarship.org/uc/item/9c749361" target="_blank">
-					Evaluating the Sustainability Impacts of Intelligent Carpooling Systems for SOV Commuters in the Atlanta Region</a></li>
-				<br>
-				<li><a href="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpoolingvanpooling-system-among-sov" target="_blank">
-					Evaluating Sustainability Impacts of Intelligent Carpooling/Vanpooling System among SOV Commuters, Phase II: Park and Ride Interactions</li>
-				<br>
-			</ul>
-			{/if}
+			<hr id="Papers">
+			<h4>Important Papers & Reports</h4>
+			<PaperCard
+				imageSrc="/img/lp_method_comparison.jpeg"
+				title="Innovative Method for Estimating Large Truck Volume Using Aggregate Volume and Occupancy Data Incorporating Empirical Knowledge Into Linear Programming"
+				webLink=""
+				paperLink="https://journals.sagepub.com/doi/abs/10.1177/03611981221094569"
+				summary="Single loop detectors (or its equivalents) are the most equipped traffic detecotr. 
+				By default, it generates count and occupancy every 20 or 30 seconds.
+				 Most methods assume an average vehicle length to estimate traffic speed, making the estimation far from truth.
+				 In our study, assuming fleet is composed of short and long vehicle, we use linear programming method to speculate the 'right' combination of Long/Short vehicles.
+				 Our proposed method outcompete most other methods by a large margin in most situations. 
+				 Results are quite similar to the Weigh-in-Motion station results (see left figure comparing results lane by lane)."
+			/>
 
-			<hr>
-			{#if activeLang === "en"}
-			<h2 id="Skillsets">Skillsets</h2>
-			<ul class="list-unstyled">
-				<li>Programming Language: Python, R, JavaScript, C++, SQL, git, etc.</li>
-				<li>Python Packages: Numpy, Matplotlib, Pandas, PyTorch, Keras, Gurobipy, TraCI, etc.</li>
-				<li>Industrial Softwares: SUMO, Vissim, ArcGIS, QGIS, Matlab, Simio, etc.</li>
-			</ul>
-			{:else if activeLang === "中"}
-			<h2 id="Skillsets">常用技术栈</h2>
-			<ul class="list-unstyled">
-				<li>编程语言: Python, R, JavaScript, C++, SQL, git, etc.</li>
-				<li>编程包: Numpy, Matplotlib, Pandas, PyTorch, Keras, Gurobipy, TraCI, etc.</li>
-				<li>工业软件: SUMO, Vissim, ArcGIS, QGIS, Matlab, Simio, etc.</li>
-			</ul>
-			{/if}
+			<PaperCard
+				imageSrc="/img/travel_speed_plot.png"
+				title="Analyzing Robustness of the Deep Reinforcement Learning Algorithm in Ramp Metering Applications Considering False Data Injection Attack and Defense"
+				webLink=""
+				paperLink="https://arxiv.org/abs/2301.12036"
+				summary="Ramp metering is the art of smoothly control on-ramp vehicles to the highway mainline.
+				 We analyzed the robustness of the learning algorithm using both the traditional ALINEA method and the reinforcement learning method.
+				 Furthermore, we try to use False Data Injection to attack and undermine the model.
+				 Results show that the model we proposed is quite robust."
+			/>
 
-			<hr>
-			{#if activeLang === "en"}
-			<h2 id="Methods">Methods</h2>
-			<ul class="list-unstyled">
-				<li>Modeling: Statistical Machine Learning & Deep Learning.</li>
-				<li>Optimization: Reinforcement Learning, Linear/Convex Optimization, etc.</li>
-				<li>Visualization: scientific & interactive diagrams</li>
-			</ul>
-			{:else if activeLang === "中"}
-			<h2 id="Methods">常用方法</h2>
-			<ul class="list-unstyled">
-				<li>建模: 统计学习/机器学习</li>
-				<li>优化: 强化学习/线性优化</li>
-				<li>可视化: 科学绘图</li>
-			</ul>
-			{/if}
+			<PaperCard
+				imageSrc="/img/pnr_modes.png"
+				title="Evaluating Sustainability Impacts of Intelligent Carpooling/Vanpooling System among SOV Commuters, Phase II: Park and Ride Interactions"
+				webLink="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpoolingvanpooling-system-among-sov"
+				paperLink=""
+				summary="A simulation program and matching algorithm to find the upperbound of carpool potentials among SOV drivers. 
+				Two modes are investigated: (1) driver picks up passenger at passegner's home (Direct Carpool mode); 
+				(2) both carpooler's meet at a parking lot before carpool together (PNR mode)."
+			/>
 
-			<hr>
-			{#if activeLang === "en"}
-			<h2 id="Tutorial">Public Tutorials</h2>
-			{:else if activeLang === "中"}
-			<h2 id="Tutorial">公开课/经验分享</h2>
-			{/if}
-			<!-- links to some of my tutorials on Bilibili or other websites -->
+			<PaperCard
+				imageSrc="/img/pnr_carpool.png"
+				title="Evaluating the Sustainability Impacts of Intelligent Carpooling Systems for SOV Commuters in the Atlanta Region"
+				webLink="https://escholarship.org/uc/item/9c749361"
+				paperLink="https://escholarship.org/uc/item/9c749361"
+				summary="A simulation program and matching algorithm to find the upperbound of carpool potentials among SOV drivers."
+			/>
+			
+			<h4>Research programs Involved</h4>
 			<ul class="list-unstyled">
-				<li>
-					Bilibili: <a href="https://www.bilibili.com/video/BV17u411n7t8/" target="_blank">
-						极客鸭geekDuckKonig
-					</a>
-				</li>
-				<li>
-					YouTube: <a href="https://www.youtube.com/channel/UC0thVOWX4ABslMUR_YGwgDA">
-					geekDuckKonig
-					</a>
-				</li>
-				<li>
-					Github: <a href="https://github.com/thefriedbee/video-source-code">
-					video repository
-					</a>
-				</li>
+				<li><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2038922&HistoricalAwards=false">CPS program</a></li>
+				<li><a href="https://utorii.com/gate/">GATE scholarship</a></li>
+				<li><a href="https://smartway.tn.gov/">TDOT Smartway</a></li>
+				<li><a href="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpoolingvanpooling-system-among-sov">NCST CarpoolSim phase 1</a></li>
+				<li><a href="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpooling-system-among-single-occupancy">NCST CarpoolSim phase 2</a></li>
 			</ul>
-			<hr>
 		</div>
 
-		<div class="col-md-4">
-			<Rightbar {activeLang} />
+		<div class="col-md-3">
+			<Rightbar />
 		</div>
 	</div>
 </main>
 
 <Footer />
 
-
 <style>
-  main {
+	main {
 		text-align: center;
 		padding: 1em;
 		max-width: 240px;
-		margin: 40px auto;
+		margin: 50px auto;
 		text-align: left;
 		background-color: rgba(255, 255, 255, 1.0);
 	}
 
-	/* h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	} */
-
-	@media (min-width: 640px) {
+	/* style for large screen*/
+	@media (min-width: 1080px) {
 		main {
 			max-width: 1080px;
 		}
 	}
 
-	h2 {
+	/* style for mobile devise*/
+	@media (max-width: 768px) {
+		main {
+			text-align: center;
+			padding: 1em;
+			max-width: 768px;
+			margin: 1px auto;
+			text-align: left;
+			background-color: rgba(255, 255, 255, 1.0);
+		}
+	}
+
+	.list-unstyled {
+		margin: 10px auto;
+	}
+
+	h2, h4 {
 		color: #555;
 		max-width: 960px;
 		margin: 20px auto;
 		text-align: left;
 	}
 
-	/* p {
+	p {
 		max-width: 960px;
 		margin: 20px auto;
 		text-align: left;
-	} */
+	}
+
+	ul {
+		max-width: 960px;
+		margin: 20px auto;
+		text-align: left;
+	}
 </style>
