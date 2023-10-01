@@ -6,6 +6,10 @@
 	import PaperCard from "./components/PaperCard.svelte";
     import AboutMe from "./components/AboutMe.svelte";
 
+	import photo_lp from './lib/img/lp_method_comparison.jpeg'
+	import photo_rm from './lib/img/travel_speed_plot.png'
+	import photo_pnr2 from './lib/img/pnr_modes.png'
+	import photo_pnr1 from './lib/img/pnr_carpool.png'
 	// add variables/functions for page navigation
 	let items = ["Bio", "Papers"];
 	let activeItem = "Bio";
@@ -64,7 +68,7 @@
 <main>
 	<div class="row">
 		<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-		<div class="scrollspy-example col-md-9" tabindex="0">
+		<div class="col-md-9" tabindex="0">
 
 			<AboutMe {activeLang} />
 
@@ -109,7 +113,7 @@
 			<hr id="Papers">
 			<h4>Important Papers & Reports</h4>
 			<PaperCard
-				imageSrc="/img/lp_method_comparison.jpeg"
+				imageSrc={photo_lp}
 				title="Innovative Method for Estimating Large Truck Volume Using Aggregate Volume and Occupancy Data Incorporating Empirical Knowledge Into Linear Programming"
 				webLink=""
 				paperLink="https://journals.sagepub.com/doi/abs/10.1177/03611981221094569"
@@ -122,7 +126,7 @@
 			/>
 
 			<PaperCard
-				imageSrc="/img/travel_speed_plot.png"
+				imageSrc={photo_rm}
 				title="Analyzing Robustness of the Deep Reinforcement Learning Algorithm in Ramp Metering Applications Considering False Data Injection Attack and Defense"
 				webLink=""
 				paperLink="https://arxiv.org/abs/2301.12036"
@@ -133,7 +137,7 @@
 			/>
 
 			<PaperCard
-				imageSrc="/img/pnr_modes.png"
+				imageSrc={photo_pnr2}
 				title="Evaluating Sustainability Impacts of Intelligent Carpooling/Vanpooling System among SOV Commuters, Phase II: Park and Ride Interactions"
 				webLink="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpoolingvanpooling-system-among-sov"
 				paperLink=""
@@ -143,7 +147,7 @@
 			/>
 
 			<PaperCard
-				imageSrc="/img/pnr_carpool.png"
+				imageSrc={photo_pnr1}
 				title="Evaluating the Sustainability Impacts of Intelligent Carpooling Systems for SOV Commuters in the Atlanta Region"
 				webLink="https://escholarship.org/uc/item/9c749361"
 				paperLink="https://escholarship.org/uc/item/9c749361"
@@ -173,7 +177,7 @@
 		text-align: center;
 		padding: 1em;
 		max-width: 240px;
-		margin: 50px auto;
+		margin: 20px auto;
 		text-align: left;
 		background-color: rgba(255, 255, 255, 1.0);
 	}

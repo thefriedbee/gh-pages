@@ -1,4 +1,5 @@
 <script>
+  import myphoto from '../lib/img/my-img.jpeg'
   // a paragraph explaining the content of the paper (could be the abstract)
   export let activeLang;
 </script>
@@ -6,7 +7,7 @@
 
 <div class="about-me">
   <div class="image">
-    <img src="./img/my-img.jpeg" class="img-fluid" alt="My Selfie">
+    <img src={myphoto} class="img-fluid" alt="My Selfie">
   </div>
   <div class="info-lang">
     {#if activeLang == "en"}
