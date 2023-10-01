@@ -1,5 +1,5 @@
 <script>
-  import myphoto from '../lib/img/my-img.jpeg'
+  import myphoto from '../assets/img/my-img.jpeg'
   // a paragraph explaining the content of the paper (could be the abstract)
   export let activeLang;
 </script>

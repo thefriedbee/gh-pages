@@ -6,10 +6,10 @@
 	import PaperCard from "./components/PaperCard.svelte";
     import AboutMe from "./components/AboutMe.svelte";
 
-	import photo_lp from './lib/img/lp_method_comparison.jpeg'
-	import photo_rm from './lib/img/travel_speed_plot.png'
-	import photo_pnr2 from './lib/img/pnr_modes.png'
-	import photo_pnr1 from './lib/img/pnr_carpool.png'
+	import photo_lp from './assets/img/lp_method_comparison.jpeg'
+	import photo_rm from './assets/img/travel_speed_plot.png'
+	import photo_pnr2 from './assets/img/pnr_modes.png'
+	import photo_pnr1 from './assets/img/pnr_carpool.png'
 	// add variables/functions for page navigation
 	let items = ["Bio", "Papers"];
 	let activeItem = "Bio";
