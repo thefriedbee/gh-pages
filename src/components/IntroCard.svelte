@@ -6,7 +6,7 @@
 
 
 <div class="intro-card">
-  <h4>{title}</h4>
+  <h4 class="title">{title}</h4>
   <ul>
     {#each bullets as bullet}
       <li>{bullet}</li>
@@ -30,11 +30,16 @@
     margin-top: 0;
   }
 
+  .title{
+    font-weight: 900;
+  }
+
   /* Media query for narrow screens (e.g., mobile) */
   @media (max-width: 768px) {
     .intro-card {
       flex-direction: column; /* Stack elements vertically */
     }
   }
+
 </style>
   

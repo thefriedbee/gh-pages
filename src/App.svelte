@@ -10,6 +10,7 @@
 	import photo_rm from './assets/img/travel_speed_plot.png'
 	import photo_pnr2 from './assets/img/pnr_modes.png'
 	import photo_pnr1 from './assets/img/pnr_carpool.png'
+	import photo_cfs_share from './assets/img/cfs_share_by_origin.jpg'
 	// add variables/functions for page navigation
 	let items = ["Bio", "Papers"];
 	let activeItem = "Bio";
@@ -113,21 +114,30 @@
 			<hr id="Papers">
 			<h4>Important Papers & Reports</h4>
 			<PaperCard
+				imageSrc={photo_cfs_share}
+				title="Improving the Accuracy of Freight Mode Choice Models"
+				webLink=""
+				paperLink="https://www.sciencedirect.com/science/article/pii/S0957417423029809"
+				summary="We used the 2017 Commodity Flow Survey Public Use File data set to explore building a high-performance freight mode choice model,
+				 considering three main improvements. The proposed method achieved over 92% accuracy without incorporating external information, 
+				an over 19% increase compared to directly fitting Random Forests models over 10,000 samples. 
+				Furthermore, SHAP (Shapely Additive Explanations) values were computed to explain the outputs and major patterns obtained from the proposed model."
+			/>
+
+			<PaperCard
 				imageSrc={photo_lp}
-				title="Innovative Method for Estimating Large Truck Volume Using Aggregate Volume and Occupancy Data Incorporating Empirical Knowledge Into Linear Programming"
+				title="Innovative Method for Estimating Large Truck Volume"
 				webLink=""
 				paperLink="https://journals.sagepub.com/doi/abs/10.1177/03611981221094569"
-				summary="Single loop detectors (or its equivalents) are the most equipped traffic detecotr. 
-				By default, it generates count and occupancy every 20 or 30 seconds.
-				 Most methods assume an average vehicle length to estimate traffic speed, making the estimation far from truth.
-				 In our study, assuming fleet is composed of short and long vehicle, we use linear programming method to speculate the 'right' combination of Long/Short vehicles.
-				 Our proposed method outcompete most other methods by a large margin in most situations. 
-				 Results are quite similar to the Weigh-in-Motion station results (see left figure comparing results lane by lane)."
+				summary="Radar Detectors (or single loop detectors) are the most equipped traffic detectors. 
+				By default, it generates aggregated traffic volume and occupancy every 20 or 30 seconds by each traffic lane.
+				Assuming fleet is only composed of Short and Long Vehicles, we use Linear Programming to speculate the combination of Long/Short vehicles.
+				Results are quite similar to the Weigh-in-Motion station results (see left figure comparing results lane by lane) competing most other methods in field."
 			/>
 
 			<PaperCard
 				imageSrc={photo_rm}
-				title="Analyzing Robustness of the Deep Reinforcement Learning Algorithm in Ramp Metering Applications Considering False Data Injection Attack and Defense"
+				title="Analyzing Robustness of the Deep Reinforcement Learning Algorithm in Ramp Metering Applications"
 				webLink=""
 				paperLink="https://arxiv.org/abs/2301.12036"
 				summary="Ramp metering is the art of smoothly control on-ramp vehicles to the highway mainline.
@@ -138,7 +148,7 @@
 
 			<PaperCard
 				imageSrc={photo_pnr2}
-				title="Evaluating Sustainability Impacts of Intelligent Carpooling/Vanpooling System among SOV Commuters, Phase II: Park and Ride Interactions"
+				title="Evaluating Sustainability Impacts of Intelligent Carpooling/Vanpooling System among SOV Commuters"
 				webLink="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpoolingvanpooling-system-among-sov"
 				paperLink=""
 				summary="A simulation program and matching algorithm to find the upperbound of carpool potentials among SOV drivers. 
@@ -148,7 +158,7 @@
 
 			<PaperCard
 				imageSrc={photo_pnr1}
-				title="Evaluating the Sustainability Impacts of Intelligent Carpooling Systems for SOV Commuters in the Atlanta Region"
+				title="Evaluating the Sustainability Impacts of Intelligent Carpooling Systems for SOV Commuters"
 				webLink="https://escholarship.org/uc/item/9c749361"
 				paperLink="https://escholarship.org/uc/item/9c749361"
 				summary="A simulation program and matching algorithm to find the upperbound of carpool potentials among SOV drivers."
@@ -156,7 +166,8 @@
 			
 			<h4>Research programs Involved</h4>
 			<ul class="list-unstyled">
-				<li><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2038922&HistoricalAwards=false">CPS program</a></li>
+				<li><a href="https://fersc.utk.edu/research-focus/fersc-projects/">FERSC: Freight Network Resilience Analysis</a></li>
+				<li><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2038922&HistoricalAwards=false">Cybersecurity system program</a></li>
 				<li><a href="https://utorii.com/gate/">GATE scholarship</a></li>
 				<li><a href="https://smartway.tn.gov/">TDOT Smartway</a></li>
 				<li><a href="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpoolingvanpooling-system-among-sov">NCST CarpoolSim phase 1</a></li>

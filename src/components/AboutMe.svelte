@@ -13,7 +13,7 @@
     {#if activeLang == "en"}
     <h2 id="Bio">Diyi Liu</h2>
     <ul class="list-unstyled">
-      <li>Ph.D student in Transportation Engineering at University of Tennessee, Knoxville</li>
+      <li>Ph.D candidate in Transportation Engineering at University of Tennessee, Knoxville</li>
       <li>Advisor: <a href="https://cee.utk.edu/people/lee-d-han/">Dr. Lee D Han</a></li>
     </ul>
     {:else if activeLang == "中"}
@@ -37,10 +37,14 @@
     border-radius: 5px;
   }
 
-  h4 {
+  h2 {
+    font-weight: bold;
+  }
+
+  /* h4 {
     font-size: 1.0rem;
     margin-top: 0;
-  }
+  } */
 
   /* Media query for narrow screens (e.g., mobile) */
   @media (max-width: 768px) {

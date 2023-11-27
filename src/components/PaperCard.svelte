@@ -15,7 +15,7 @@
     <img src={imageSrc} alt={title} />
 </div>
 <div class="info">
-    <h4>{title}</h4>
+    <div class="title">{title}</div>
     <p>
       {#if webLink != ''}
         <a href={webLink} target="_blank" rel="noopener noreferrer">Website</a>
@@ -65,6 +65,11 @@
     a {
       text-decoration: none;
       color: #0070f3;  /* Link color can be customized */
+    }
+
+    .title{
+      /* padding-left: 100; */
+      font-weight: 900;
     }
 
     /* Media query for narrow screens (e.g., mobile) */
