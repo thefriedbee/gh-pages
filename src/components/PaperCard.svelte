@@ -16,19 +16,20 @@
 </div>
 <div class="info">
     <div class="title">{title}</div>
-    <p>
+    <p class="mylink">
       {#if webLink != ''}
         <a href={webLink} target="_blank" rel="noopener noreferrer">Website</a>
       {/if}
 
-      {#if webLink != '' && webLink != ''}
+      {#if webLink != '' && paperLink != ''}
         |
       {/if}
+
       {#if paperLink != ''}
         <a href={paperLink} target="_blank" rel="noopener noreferrer">Paper</a>
       {/if}
     </p>
-    <p><span class="text-danger">Summary: </span> {summary}</p>
+    <p class="describe"><span class="text-danger">Summary: </span> {summary}</p>
 </div>
 </div>
   
@@ -36,9 +37,9 @@
     /* Add your CSS styles for the PaperCard component here */
     .paper-card {
       display: flex;
-      margin: 20px;
-      padding: 10px;
-      border: 1px solid #ddd;
+      margin: 10px;
+      padding: 5px;
+      border: 0px solid #ddd;
       border-radius: 5px;
     }
   
@@ -55,6 +56,7 @@
     .info {
       flex: 3;
       padding-left: 20px;
+      margin-bottom: 0px;
     }
   
     h4 {
@@ -67,9 +69,20 @@
       color: #0070f3;  /* Link color can be customized */
     }
 
+    .mylink{
+      margin-bottom: 0px;
+    }
+
     .title{
-      /* padding-left: 100; */
       font-weight: 900;
+    }
+
+    .text-danger{
+      font-style: italic;
+    }
+
+    .describe{
+      color: #777777;
     }
 
     /* Media query for narrow screens (e.g., mobile) */
@@ -80,7 +93,7 @@
 
     .image {
       flex: -1; /* Move image to the top */
-      margin-bottom: 10px; /* Add space between image and content */
+      margin-bottom: 5px; /* Add space between image and content */
     }
 
     .info {

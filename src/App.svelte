@@ -111,17 +111,20 @@
 				/>
 			{/if}
 
-			<hr id="Papers">
-			<h4>Important Papers & Reports</h4>
+			<div class="programs">
+				<hr id="Papers">
+				<h4>Important Papers & Reports</h4>
+
+			</div>
+				
 			<PaperCard
 				imageSrc={photo_cfs_share}
 				title="Improving the Accuracy of Freight Mode Choice Models"
 				webLink=""
 				paperLink="https://www.sciencedirect.com/science/article/pii/S0957417423029809"
-				summary="We used the 2017 Commodity Flow Survey Public Use File data set to explore building a high-performance freight mode choice model,
-				 considering three main improvements. The proposed method achieved over 92% accuracy without incorporating external information, 
-				an over 19% increase compared to directly fitting Random Forests models over 10,000 samples. 
-				Furthermore, SHAP (Shapely Additive Explanations) values were computed to explain the outputs and major patterns obtained from the proposed model."
+				summary="Given 2017 Commodity Flow Survey Public Use File data set (6 million records), the proposed model achieved over 92% accuracy 
+				in freight mode choice prediction, an over 19% increase against the Random Forests models over 10,000 samples. 
+				SHAP (Shapely Additive Explanations) values were computed to explain the outputs."
 			/>
 
 			<PaperCard
@@ -129,10 +132,9 @@
 				title="Innovative Method for Estimating Large Truck Volume"
 				webLink=""
 				paperLink="https://journals.sagepub.com/doi/abs/10.1177/03611981221094569"
-				summary="Radar Detectors (or single loop detectors) are the most equipped traffic detectors. 
-				By default, it generates aggregated traffic volume and occupancy every 20 or 30 seconds by each traffic lane.
+				summary="Radar Detectors (or single loop detectors) are the most equipped traffic detectors aggregating traffic volume and occupancy every 20 or 30 seconds for each traffic lane.
 				Assuming fleet is only composed of Short and Long Vehicles, we use Linear Programming to speculate the combination of Long/Short vehicles.
-				Results are quite similar to the Weigh-in-Motion station results (see left figure comparing results lane by lane) competing most other methods in field."
+				Results are quite similar to the Weigh-in-Motion station results (see left figure comparing results lane by lane) outcompeting most previous proposed methods."
 			/>
 
 			<PaperCard
@@ -141,14 +143,14 @@
 				webLink=""
 				paperLink="https://arxiv.org/abs/2301.12036"
 				summary="Ramp metering is the art of smoothly control on-ramp vehicles to the highway mainline.
-				 We analyzed the robustness of the learning algorithm using both the traditional ALINEA method and the reinforcement learning method.
-				 Furthermore, we try to use False Data Injection to attack and undermine the model.
-				 Results show that the model we proposed is quite robust."
+				We analyzed the robustness of the learning algorithm using both the traditional ALINEA method and the Reinforcement Learning method.
+				Furthermore, we try to use False Data Injection to attack and undermine the model.
+				Results show that the proposed RL method outcompete ALINEA even under attacks."
 			/>
 
 			<PaperCard
 				imageSrc={photo_pnr2}
-				title="Evaluating Sustainability Impacts of Intelligent Carpooling/Vanpooling System among SOV Commuters"
+				title="Evaluating Sustainability Impacts of Intelligent Carpooling System among SOV Commuters"
 				webLink="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpoolingvanpooling-system-among-sov"
 				paperLink=""
 				summary="A simulation program and matching algorithm to find the upperbound of carpool potentials among SOV drivers. 
@@ -164,15 +166,18 @@
 				summary="A simulation program and matching algorithm to find the upperbound of carpool potentials among SOV drivers."
 			/>
 			
-			<h4>Research programs Involved</h4>
-			<ul class="list-unstyled">
-				<li><a href="https://fersc.utk.edu/research-focus/fersc-projects/">FERSC: Freight Network Resilience Analysis</a></li>
-				<li><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2038922&HistoricalAwards=false">Cybersecurity system program</a></li>
-				<li><a href="https://utorii.com/gate/">GATE scholarship</a></li>
-				<li><a href="https://smartway.tn.gov/">TDOT Smartway</a></li>
-				<li><a href="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpoolingvanpooling-system-among-sov">NCST CarpoolSim phase 1</a></li>
-				<li><a href="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpooling-system-among-single-occupancy">NCST CarpoolSim phase 2</a></li>
-			</ul>
+			<hr>
+			<div class="programs">
+				<h4>Research programs Involved</h4>
+				<ul class="list-unstyled">
+					<li><a href="https://fersc.utk.edu/research-focus/fersc-projects/">FERSC: Freight Network Resilience Analysis</a></li>
+					<li><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2038922&HistoricalAwards=false">CPS: Cyber-Physical System Analysis</a></li>
+					<li><a href="https://utorii.com/gate/">GATE Scholarship</a></li>
+					<li><a href="https://smartway.tn.gov/">TDOT Smartway</a></li>
+					<li><a href="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpoolingvanpooling-system-among-sov">NCST CarpoolSim phase 1</a></li>
+					<li><a href="https://ncst.ucdavis.edu/project/evaluating-sustainability-impacts-intelligent-carpooling-system-among-single-occupancy">NCST CarpoolSim phase 2</a></li>
+				</ul>
+			</div>
 		</div>
 
 		<div class="col-md-3">
@@ -191,25 +196,6 @@
 		margin: 20px auto;
 		text-align: left;
 		background-color: rgba(255, 255, 255, 1.0);
-	}
-
-	/* style for large screen*/
-	@media (min-width: 1080px) {
-		main {
-			max-width: 1080px;
-		}
-	}
-
-	/* style for mobile devise*/
-	@media (max-width: 768px) {
-		main {
-			text-align: center;
-			padding: 1em;
-			max-width: 768px;
-			margin: 1px auto;
-			text-align: left;
-			background-color: rgba(255, 255, 255, 1.0);
-		}
 	}
 
 	.list-unstyled {
@@ -233,5 +219,33 @@
 		max-width: 960px;
 		margin: 20px auto;
 		text-align: left;
+	}
+
+	h4 {
+		font-weight: 900;
+	}
+	
+	.programs{
+		margin: 10px;
+    	padding: 10px;
+	}
+
+	/* style for large screen*/
+	@media (min-width: 1080px) {
+		main {
+			max-width: 1080px;
+		}
+	}
+
+	/* style for mobile devise*/
+	@media (max-width: 768px) {
+		main {
+			text-align: center;
+			padding: 1em;
+			max-width: 768px;
+			margin: 1px auto;
+			text-align: left;
+			background-color: rgba(255, 255, 255, 1.0);
+		}
 	}
 </style>

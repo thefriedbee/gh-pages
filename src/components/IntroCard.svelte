@@ -7,7 +7,7 @@
 
 <div class="intro-card">
   <h4 class="title">{title}</h4>
-  <ul>
+  <ul class="mybullet">
     {#each bullets as bullet}
       <li>{bullet}</li>
     {/each}
@@ -19,7 +19,7 @@
   .intro-card {
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin: 10px;
     padding: 10px;
     border: 0px solid #ddd;
     border-radius: 5px;
@@ -32,6 +32,10 @@
 
   .title{
     font-weight: 900;
+  }
+
+  .mybullet{
+    margin-bottom: 0px;
   }
 
   /* Media query for narrow screens (e.g., mobile) */
