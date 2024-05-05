@@ -20,7 +20,7 @@
   <h4>{title}</h4>
   <p>
     {#if appLink !=''}
-      <a href={webLink} target="_blank" rel="noopener noreferrer">Application</a>
+      <a href={appLink} target="_blank" rel="noopener noreferrer">Application</a>
     {/if}
 
     {#if appLink != '' && gitLink != ''}
@@ -28,7 +28,7 @@
     {/if}
 
     {#if gitLink !=''}
-      <a href={webLink} target="_blank" rel="noopener noreferrer">Github</a>
+      <a href={gitLink} target="_blank" rel="noopener noreferrer">Github</a>
     {/if}
 
     {#if gitLink != '' && webLink != ''}
