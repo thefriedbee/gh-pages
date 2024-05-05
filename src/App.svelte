@@ -7,6 +7,7 @@
     import AboutMe from "./components/AboutMe.svelte";
 
 	import photo_lp from './assets/img/lp_method_comparison.jpeg'
+	import photo_tmas from './assets/img/ga_tmas_flow.jpg'
 	import photo_rm from './assets/img/travel_speed_plot.png'
 	import photo_pnr2 from './assets/img/pnr_modes.png'
 	import photo_pnr1 from './assets/img/pnr_carpool.png'
@@ -130,7 +131,19 @@
 				 The online tool also supports some basic analysis including generate isochrone maps given origin,
 				 generate travel time variability over time given a pair of origin and destination, etc."
 			/>
-				
+
+			<PaperCard
+				imageSrc={photo_tmas}
+				title="An Iterative Algorithm to Impute Traffic Information over Nationwide Traffic Networks"
+				summary="
+				 Combining Annual Average Daily Traffic (AADT) volume from HPMS and Traffic Monitoring Analysis System (TMAS) dataset, 
+				 this study, inspired by Bellman-Ford algorithm, proposes an elegant method of imputing information across the traffic network 
+				 to generate both truck volumes and vehicle class distributions. 
+				 Results show that the performance of the model achieves an R-square of over 0.4 for truck volume, 
+				 outperforming benchmark methods such as Kriging method and Geographical Weighted Regression. 
+				 It has great potentials to support traffic analysis, emission modeling, etc."
+			/>
+			
 			<PaperCard
 				imageSrc={photo_cfs_share}
 				title="Improving the Accuracy of Freight Mode Choice Models"
