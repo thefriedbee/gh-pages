@@ -116,6 +116,19 @@
 				<h4>Important Papers & Reports</h4>
 
 			</div>
+
+			<PaperCard
+				imageSrc="/img/gtfs2stn_paper.png"
+				title="GTFS2STN: Analyzing GTFS Transit Data By Generating Spatiotemporal Transit Network"
+				appLink="https://gtfs2stn.streamlit.app/"
+				gitLink="https://github.com/thefriedbee/GTFS2STN"
+				summary="GTFS, the General Transit Feed Specialization, is an open standard format 
+				to record transit information. A preliminary tool named GTFS2STN is implemented to analyze
+				 the accessibility of the transit system.
+				 Furthermore, a simple application is built for users to generate spatiotemporal network online.
+				 The online tool also supports some basic analysis including generate isochrone maps given origin,
+				 generate travel time variability over time given a pair of origin and destination, etc."
+			/>
 				
 			<PaperCard
 				imageSrc={photo_cfs_share}

@@ -7,4 +7,3 @@
 5. Consider the delete remote branch `git push origin --delete feature/login`
 6. (you can delete local branch by `git branch -D local_branch_name`)!!!
 
-
