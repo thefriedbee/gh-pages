@@ -10,6 +10,7 @@
 	import photo_rm from './assets/img/travel_speed_plot.png'
 	import photo_pnr2 from './assets/img/pnr_modes.png'
 	import photo_pnr1 from './assets/img/pnr_carpool.png'
+	import photo_gtfs from './assets/img/gtfs2stn_paper.png'
 	import photo_cfs_share from './assets/img/cfs_share_by_origin.jpg'
 	// add variables/functions for page navigation
 	let items = ["Bio", "Papers"];
@@ -118,7 +119,7 @@
 			</div>
 
 			<PaperCard
-				imageSrc="/img/gtfs2stn_paper.png"
+				imageSrc={photo_gtfs}
 				title="GTFS2STN: Analyzing GTFS Transit Data By Generating Spatiotemporal Transit Network"
 				appLink="https://gtfs2stn.streamlit.app/"
 				gitLink="https://github.com/thefriedbee/GTFS2STN"
