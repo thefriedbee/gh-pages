@@ -40,13 +40,13 @@
 	];
 
 	let my_skills = [
-		"Programming Language: Python, R, JavaScript, C++, SQL, git, etc.",
+		"Programming Language: Python, R, JavaScript/TypeScript, Rust, C++, SQL, git, etc.",
 		"Python Packages: Numpy, Matplotlib, Pandas, PyTorch, Keras, Gurobipy, etc.",
 		"Industrial Softwares: SUMO, Vissim, ArcGIS, QGIS, Matlab, Simio, etc."
 	];
 
 	let my_skills_cn = [
-		"编程语言: Python, R, JavaScript, C++, SQL, git, etc.",
+		"编程语言: Python, R, JavaScript/TypeScript, Rust, C++, SQL, git, etc.",
 		"编程包: Numpy, Matplotlib, Pandas, PyTorch, Keras, Gurobipy, TraCI, etc.",
 		"工业软件: SUMO, Vissim, ArcGIS, QGIS, Matlab, Simio, etc."
 	];
