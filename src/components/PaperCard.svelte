@@ -2,11 +2,8 @@
   export let imageSrc = '';
   export let title = '';
   // weblink creates a separate link that explains the paper
-  export let webLink = '';
-  export let gitLink = '';
-  export let appLink = '';
-  // paper link is just a link to the project
-  export let paperLink = '';
+  export let links = {};
+
   // a paragraph explaining the content of the paper (could be the abstract)
   export let summary = '';
 </script>
@@ -19,33 +16,11 @@
 <div class="info">
   <h4>{title}</h4>
   <p>
-    {#if appLink !=''}
-      <a href={appLink} target="_blank" rel="noopener noreferrer">Application</a>
-    {/if}
-
-    {#if appLink != '' && gitLink != ''}
-      |
-    {/if}
-
-    {#if gitLink !=''}
-      <a href={gitLink} target="_blank" rel="noopener noreferrer">Github</a>
-    {/if}
-
-    {#if gitLink != '' && webLink != ''}
-      |
-    {/if}
-    
-    {#if webLink != ''}
-      <a href={webLink} target="_blank" rel="noopener noreferrer">Website</a>
-    {/if}
-
-    {#if webLink != '' && paperLink != ''}
-      |
-    {/if}
-
-    {#if paperLink != ''}
-      <a href={paperLink} target="_blank" rel="noopener noreferrer">Paper</a>
-    {/if}
+    {#each Object.entries(Object.entries(links)) as [i, [name, page]]}
+      <a href={page} target="_blank" rel="noopener noreferrer">{name}</a>
+      {#if Number(i) < Object.keys(links).length - 1}|&nbsp
+      {/if}
+    {/each}
   </p>
   <p><span class="text-danger">Summary: </span> {summary}</p>
 </div>
