@@ -124,6 +124,7 @@
 				title="GTFS2STN: Analyzing GTFS Transit Data By Generating Spatiotemporal Transit Network"
 				appLink="https://gtfs2stn.streamlit.app/"
 				gitLink="https://github.com/thefriedbee/GTFS2STN"
+				paperLink="https://arxiv.org/abs/2405.02760"
 				summary="GTFS, the General Transit Feed Specialization, is an open standard format 
 				to record transit information. A preliminary tool named GTFS2STN is implemented to analyze
 				 the accessibility of the transit system.
