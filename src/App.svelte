@@ -6,6 +6,7 @@
 	import PaperCard from "./components/PaperCard.svelte";
     import AboutMe from "./components/AboutMe.svelte";
 
+	import photo_vehicle_track from './assets/img/vehicle_track.png'
 	import photo_lp from './assets/img/lp_method_comparison.jpeg'
 	import photo_tmas from './assets/img/ga_tmas_flow.jpg'
 	import photo_rm from './assets/img/travel_speed_plot.png'
@@ -144,8 +145,19 @@
 			<div class="programs">
 				<hr id="Papers">
 				<h4>Important Papers & Reports</h4>
-
 			</div>
+
+			<PaperCard
+				imageSrc={photo_vehicle_track}
+				title="Identifying vehicles combining YOLO and self-supervised learning on low-resolution CCTV videos"
+				summary="It is not possible to use pretrained YOLO to identify all vehicles in low resolution videos.
+				This study propose a framework to extra traffic information from low resolution videos
+				 by decomposing the task is decomposed to four sub-tasks:
+				 vehicle identification, vehicle classification, vehicle tracking, and trajectory transformation.
+				 Each task has their own specialized model. YOLO is retrained for vehicle identification.
+				 SimCLR is applied to learn vehicle representations for classification tasks.
+				 Finally, ByteTrack is used for vehicle tracking."
+			/>
 
 			<PaperCard
 				imageSrc={photo_gtfs}
