@@ -1,5 +1,6 @@
 <script>
   export let imageSrc = '';
+  export let videoSrc = '';
   export let title = '';
   // weblink creates a separate link that explains the paper
   export let links = {};
@@ -40,7 +41,15 @@
 
 <div class="paper-card">
 <div class="image">
-  <img src={imageSrc} alt={title} />
+  {#if videoSrc}
+    <div class="video-container">
+      <video autoplay loop muted playsinline>
+        <source src={videoSrc} type="video/gif">
+      </video>
+    </div>
+  {:else}
+    <img src={imageSrc} alt={title} style="width: 100%; height: auto;"/>
+  {/if}
 </div>
 <div class="info">
   <h4>{title}<p class="links">
@@ -82,6 +91,20 @@
   .image {
     flex: 1;
     max-height: 500px;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* For 16:9 aspect ratio */
+  }
+  
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .image img {

@@ -6,6 +6,8 @@
 	import PaperCard from "./components/PaperCard.svelte";
     import AboutMe from "./components/AboutMe.svelte";
 
+	// Try a different approach for video
+	const video_vehicle_track = './assets/video/vehicle_track.gif';
 	import photo_vehicle_track from './assets/img/vehicle_track.png'
 	import photo_lp from './assets/img/lp_method_comparison.jpeg'
 	import photo_tmas from './assets/img/ga_tmas_flow.jpg'
@@ -103,8 +105,7 @@
 <main>
 	<div class="row">
 		<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-		<div class="col-md-9" tabindex="0">
-
+		<div class="col-md-10" tabindex="0">
 			<AboutMe {activeLang} />
 
 			<hr>
@@ -346,7 +347,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-3">
+		<div class="col-md-2">
 			<Rightbar {activeLang} />
 		</div>
 	</div>

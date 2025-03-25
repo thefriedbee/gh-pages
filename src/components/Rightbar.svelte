@@ -5,7 +5,6 @@
 
 <segment>
 <div class="rightbar">
-    <hr>
     {#if activeLang == "English"}
         <h4>Contact Me</h4>
     {:else if activeLang == "中文"}
@@ -93,7 +92,6 @@
             {/if}
         </li>
     </ul>
-    <hr>
 </div>
 </segment>
 
@@ -101,17 +99,27 @@
 <style>
     .rightbar {
         float: left;
+        font-size: 0.9rem;
     }
 
     h4 {
         color: #555;
 		margin: 10px auto;
 		text-align: left;
+        font-size: 1.1rem;
     }
 
     .list-group {
         max-width: 300px;
         margin: 20px auto;
+    }
+    
+    .list-group-item {
+        font-size: 0.85rem;
+    }
+    
+    a {
+        font-size: 0.85rem;
     }
 </style>
 
