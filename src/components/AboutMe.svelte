@@ -10,21 +10,23 @@
     <img src={myphoto} class="img-fluid" alt="My Selfie">
   </div>
   <div class="info-lang">
-    {#if activeLang == "en"}
+    {#if activeLang == "English"}
     <h2 id="Bio">Diyi Liu</h2>
     <ul class="list-unstyled">
-      <li>Ph.D candidate in Transportation Engineering at University of Tennessee, Knoxville</li>
-      <li>Advisor: <a href="https://cee.utk.edu/people/lee-d-han/">Dr. Lee D Han</a></li>
+      <li>Currently Postdoc at the George Washington University</li>
+      <li>Ph.D in Transportation Engineering at University of Tennessee, Knoxville</li>
     </ul>
-    {:else if activeLang == "中"}
+    {:else if activeLang == "中文"}
     <h2 id="Bio">刘迪一</h2>
     <ul class="list-unstyled">
-      <li>田纳西大学, 诺克斯维尔分校(UT, Knoxville)交通工程专业在读博士</li>
-      <li>导师: <a href="https://cee.utk.edu/people/lee-d-han/" target="_blank">Dr. Lee D Han(韩立教授)</a></li>
+      <li>乔治华盛顿大学 (George Washington University) 交通工程专业博士后</li>
+      <li>田纳西大学, 诺克斯维尔分校(UT, Knoxville)交通工程专业博士</li>
     </ul>
     {/if}
   </div>
 </div>
+
+<hr class="custom-hr">
 
 <style>
   /* Add your CSS styles for the PaperCard component here */
@@ -32,7 +34,7 @@
     display: flex;
     flex-direction: row;
     margin: 20px;
-    margin-left: 80px;
+    margin-left: 20px;
     padding: 10px;
     border-radius: 5px;
   }
@@ -40,11 +42,6 @@
   h2 {
     font-weight: bold;
   }
-
-  /* h4 {
-    font-size: 1.0rem;
-    margin-top: 0;
-  } */
 
   /* Media query for narrow screens (e.g., mobile) */
   @media (max-width: 768px) {
@@ -62,9 +59,18 @@
 
   .image {
     flex: -1; /* Move image to the top */
-    max-width: 150px;
-    min-width: 100px;
+    max-width: 120px;
+    min-width: 120px;
     margin: 10px;
+    margin-left: -10px;
+  }
+  
+  .custom-hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    width: 95%;
   }
 </style>
   

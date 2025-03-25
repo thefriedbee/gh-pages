@@ -30,7 +30,7 @@
   /* Add your CSS styles for the PaperCard component here */
   .paper-card {
     display: flex;
-    margin: 20px;
+    margin: 5px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -38,7 +38,7 @@
 
   .image {
     flex: 1;
-    max-height: 300px;
+    max-height: 500px;
   }
 
   .image img {
@@ -69,7 +69,7 @@
 
   .image {
     flex: -1; /* Move image to the top */
-    margin-bottom: 10px; /* Add space between image and content */
+    margin-bottom: 5px; /* Add space between image and content */
   }
 
   .info {

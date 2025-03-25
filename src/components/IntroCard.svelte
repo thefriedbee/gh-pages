@@ -19,7 +19,7 @@
   .intro-card {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: 0px;
     padding: 10px;
     border: 0px solid #ddd;
     border-radius: 5px;
