@@ -24,7 +24,7 @@
     {#if activeLang == "English"}
         <h4>Fun Projects</h4>
     {:else if activeLang == "中文"}
-        <h4>趣味应用/网站项目</h4>
+        <h4>应用/网站项目</h4>
     {/if}
 
     <ul class="list-group">
@@ -105,6 +105,8 @@
 
     h4 {
         color: #555;
+		margin: 10px auto;
+		text-align: left;
     }
 
     .list-group {
