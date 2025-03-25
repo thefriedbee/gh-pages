@@ -18,10 +18,17 @@
 	import photo_cfs_share from './assets/img/cfs_share_by_origin.jpg'
 
 	// add variables/functions for page navigation
-	const items = ["Bio", "Papers"];
+	let items;
+	const items_en = ["Bio", "Papers"];
+	const items_cn = ["简介", "论文"];
+
 	let activeItem = "Bio";
 	const tabChange = (e) => {
-		activeItem = e.detail;
+		if (activeLang == "中文") {
+			activeItem = items_cn[e.detail];
+		} else {
+			activeItem = items_en[e.detail];
+		}
 	}
 
 	// language settings
@@ -29,6 +36,7 @@
 	let activeLang = "中文";
 	const langChange = (e) => {
 		activeLang = e.detail;
+		items = activeLang == "中文" ? items_cn : items_en;
 	}
 
 	// add variables for the cards...
@@ -96,7 +104,11 @@
 		"Report": "https://escholarship.org/uc/item/9c749361",
 	}
 
-	
+	if (activeLang == "中文") {
+		items = items_cn;
+	} else {
+		items = items_en;
+	}
 </script>
 
 <Header {activeItem} {items} on:tabChange={tabChange}
@@ -106,9 +118,13 @@
 	<div class="row">
 		<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 		<div class="col-md-10" tabindex="0">
+			{#if activeLang == "English"}
+				<hr id="Bio">
+			{:else if activeLang == "中文"}
+				<hr id="简介">
+			{/if}
 			<AboutMe {activeLang} />
 
-			<hr>
 			{#if activeLang == "English"}
 				<IntroCard
 					title="Research Interests"
@@ -146,10 +162,11 @@
 			{/if}
 
 			<div class="programs">
-				<hr id="Papers">
 				{#if activeLang == "English"}
+					<hr id="Papers">
 					<h4>Important Papers & Reports</h4>
 				{:else if activeLang == "中文"}
+					<hr id="论文">
 					<h4>重要论文与报告</h4>
 				{/if}
 			</div>

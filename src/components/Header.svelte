@@ -30,7 +30,6 @@
         <!--dual language support-->
         <div class="justify-content-start">
             <ul class="nav navbar-nav flex-row">
-                <span class="text-light nav-item">Language:</span>
                 {#each languages as lang}
                     <li class="nav-item nav-item-lang" on:click={() => dispatch('langChange', lang)}>
                         <a class="nav-link" class:active={lang === activeLang}
