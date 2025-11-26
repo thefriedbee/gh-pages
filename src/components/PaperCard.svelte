@@ -134,10 +134,6 @@
     gap: 5px;
   }
 
-  .separator {
-    margin: 0 5px;
-  }
-
   /* Media query for narrow screens (e.g., mobile) */
 @media (max-width: 768px) {
   .paper-card {

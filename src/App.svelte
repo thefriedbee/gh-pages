@@ -33,7 +33,7 @@
 
 	// language settings
 	const languages = ["中文", "English"]
-	let activeLang = "中文";
+	let activeLang = "English";
 	const langChange = (e) => {
 		activeLang = e.detail;
 		items = activeLang == "中文" ? items_cn : items_en;
@@ -41,9 +41,9 @@
 
 	// add variables for the cards...
 	const research_interests = [
-		'Scalable data computation tasks (data science)',
-		'Machine Learning applications in transportation field (machine learning, deep learning)',
-		'Computer Science algorithms, traffic simulation, optimization algorithms, etc.',
+		'computer vision in transportation',
+		'machine learning in transportation',
+		'traffic simulation and optimization',
 	];
 
 	const research_interests_cn = [
@@ -65,10 +65,9 @@
 	];
 
 	const my_methods = [
-		"Modeling: Statistical Machine Learning & Deep Learning.",
-		"Machine Learning: Deep Learning, Reinforcement Learning, Graph Learning, etc.",
-		"Optimization: Linear/Convex Optimization, etc.",
-		"Big data: Data Science, Data Visualization, etc.",
+		"Deep Learning: Computer Vision, Graph Neural Networks, Reinforcement Learning, etc.",
+		"Data Science: Data Visualization, Data Analysis, etc.",
+		"Optimization: Linear Programming, etc.",
 	];
 
 	const my_methods_cn = [
@@ -77,6 +76,10 @@
 		"优化: 线性优化/凸优化",
 		"大数据: 数据科学, 数据可视化等",
 	];
+
+	const paper_links_vehicle_track = {
+		"Paper": "https://www.sciencedirect.com/science/article/abs/pii/S0952197625031434",
+	}
 
 	const paper_links_gtfs2stn = {
 		"App": "https://gtfs2stn.streamlit.app/",
@@ -174,14 +177,15 @@
 			{#if activeLang == "English"}
 				<PaperCard
 					imageSrc={photo_vehicle_track}
-					title="Identifying vehicles combining YOLO and self-supervised learning on low-resolution CCTV videos"
-					summary="It is not possible to use pretrained YOLO to identify all vehicles in low resolution videos.
+					title="TIE-LR: Traffic Information Extractor on low-resolution videos"
+					summary="In low-resolution videos, it is not possible to use pretrained YOLO to identify all vehicles.
 					This study propose a framework to extra traffic information from low resolution videos
 					by decomposing the task is decomposed to four sub-tasks:
 					vehicle identification, vehicle classification, vehicle tracking, and trajectory transformation.
 					Each task has their own specialized model. YOLO is retrained for vehicle identification.
 					SimCLR is applied to learn vehicle representations for classification tasks.
 					Finally, ByteTrack is used for vehicle tracking."
+					links={paper_links_vehicle_track}
 					activeLang={activeLang}
 				/>
 			{:else if activeLang == "中文"}
@@ -189,6 +193,7 @@
 					imageSrc={photo_vehicle_track}
 					title="识别低分辨率视频中的车辆信息"
 					summary="使用YOLO和自监督学习识别低分辨率视频中的车辆信息"
+					links={paper_links_vehicle_track}
 					activeLang={activeLang}
 				/>
 			{/if}
@@ -349,7 +354,7 @@
 			<hr>
 			<div class="programs">
 				{#if activeLang == "English"}
-					<h4>Research programs Involved</h4>
+					<h4>Research Projects</h4>
 				{:else if activeLang == "中文"}
 					<h4>参与的研究项目</h4>
 				{/if}

@@ -21,6 +21,8 @@
     flex-direction: column;
     margin: 0px;
     padding: 10px;
+    padding-top: 0px;
+    padding-bottom: 20px;
     border: 0px solid #ddd;
     border-radius: 5px;
   }

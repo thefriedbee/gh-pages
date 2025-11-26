@@ -13,8 +13,9 @@
     {#if activeLang == "English"}
     <h2 id="Bio">Diyi Liu</h2>
     <ul class="list-unstyled">
-      <li>Currently Postdoc at the George Washington University</li>
-      <li>Ph.D in Transportation Engineering at University of Tennessee, Knoxville</li>
+      <li>Faculty of Beijing University of Technology (北京工业大学)</li>
+      <li>Postdoc at George Washington University</li>
+      <li>Ph.D. at University of Tennessee, Knoxville</li>
     </ul>
     {:else if activeLang == "中文"}
     <h2 id="Bio">刘迪一</h2>
@@ -33,9 +34,9 @@
   .about-me {
     display: flex;
     flex-direction: row;
-    margin: 20px;
+    margin: 0px;
     margin-left: 20px;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
   }
 
@@ -62,7 +63,7 @@
     max-width: 120px;
     min-width: 120px;
     margin: 10px;
-    margin-left: -10px;
+    margin-left: 0px;
   }
   
   .custom-hr {
